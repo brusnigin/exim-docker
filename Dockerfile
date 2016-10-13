@@ -11,4 +11,5 @@ RUN yum install exim-mysql.x86_64 vim -y
 RUN env
 VOLUME /run /tmp
 VOLUME /sys/fs/cgroup /sys/fs/cgroup
-ENTRYPOINT /bin/bash
+EXPOSE 25, 587, 465
+ENTRYPOINT /sbin/exim exim -bd
